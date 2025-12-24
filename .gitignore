@@ -1,0 +1,36 @@
+# ---- OS / Editor noise ----
+.DS_Store
+Thumbs.db
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Logs / temp ----
+*.log
+*.tmp
+
+# ---- Node (if added later) ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Python (future-proof, harmless now) ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+
+# ---- Build / cache (just in case) ----
+dist/
+build/
+
+# ---- GitHub Pages cache ----
+.jekyll-cache/
+.jekyll-metadata
