@@ -7,7 +7,7 @@ No installation. No backend. No persistent runtime.
 
 It is designed for environments where a modern browser is available, but native Python tooling is not.
 
-👉 Live Demo: (GitHub Pages link here)
+Live Demo: (GitHub Pages link here)](https://cwwjacobs.github.io/stateless-py/)
 
 Overview
 
