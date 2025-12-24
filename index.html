@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StatelessPy — Browser-Based Python Execution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>StatelessPy</h1>
+
+  <p id="tagline">
+    A browser-based Python execution environment with no implicit state.
+  </p>
+
+  <div class="editor-container">
+    <textarea
+      id="code"
+      placeholder="Enter Python code to evaluate..."
+    ></textarea>
+  </div>
+
+  <div id="buttons">
+    <button onclick="runCode()">Evaluate</button>
+    <button onclick="clearOutput()">Clear Output</button>
+    <button onclick="clearCode()">Reset Code</button>
+    <button onclick="downloadScript()">Save Script</button>
+    <button onclick="downloadJSONFile('result.json')">Download result.json</button>
+    <input type="file" onchange="loadScript(event)" />
+  </div>
+
+  <pre id="output"></pre>
+
+  <footer style="margin-top: 30px; opacity: 0.6; text-align: center;">
+    Client-side execution. No servers. No persistence unless you export.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
