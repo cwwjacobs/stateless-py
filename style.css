@@ -1,0 +1,127 @@
+/* =========================================
+   StatelessPy — Eye-Strain Friendly Theme
+   ========================================= */
+
+:root {
+  --bg-main: #0f1419;        /* soft charcoal */
+  --bg-panel: #151b22;       /* editor / output surface */
+  --bg-accent: #1f6feb;     /* restrained blue */
+  --bg-accent-hover: #2f81f7;
+
+  --text-primary: #e6edf3;  /* warm off-white */
+  --text-secondary: #9da7b3;
+
+  --border-soft: #2a3441;
+}
+
+/* -------- Base -------- */
+
+body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+
+  background: var(--bg-main);
+  color: var(--text-primary);
+
+  padding: 24px;
+  margin: 0;
+
+  line-height: 1.55;
+}
+
+/* -------- Headings -------- */
+
+h1 {
+  color: var(--bg-accent);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+#tagline {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* -------- Editor -------- */
+
+.editor-container {
+  margin-bottom: 16px;
+}
+
+#code {
+  width: 100%;
+  height: 320px;
+
+  background: var(--bg-panel);
+  color: var(--text-primary);
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+
+  resize: vertical;
+  outline: none;
+}
+
+#code:focus {
+  border-color: var(--bg-accent);
+}
+
+/* -------- Buttons -------- */
+
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+
+  margin-bottom: 16px;
+}
+
+button,
+input[type="file"] {
+  background: var(--bg-accent);
+  color: #ffffff;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+button:hover,
+input[type="file"]:hover {
+  background: var(--bg-accent-hover);
+}
+
+/* -------- Output -------- */
+
+#output {
+  background: var(--bg-panel);
+  color: var(--text-primary);
+
+  padding: 16px;
+  min-height: 160px;
+
+  white-space: pre-wrap;
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+
+  overflow: auto;
+  font-size: 14px;
+}
+
+/* -------- Footer -------- */
+
+footer {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
