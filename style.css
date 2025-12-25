@@ -125,3 +125,10 @@ footer {
   font-size: 13px;
   color: var(--text-secondary);
 }
+.file-input small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #8aa4c8; /* matches your intelligence blue palette */
+  opacity: 0.85;
+}
