@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>stateless – Python in the browser. no downloads.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>stateless</h1>
+    <p id="tagline">Python in the browser — stateless, fast, clean, powerful.</p>
+    <div id="status">Loading runtime...</div>
+  </header>
+
+  <main class="container">
+    <section class="editor-container">
+      <textarea id="code" placeholder="Write your Python code here..."># Example:\nprint('Hello, stateless!')\n# Write a file and download it: \n# import json\n# open('result.json','w').write(json.dumps({'ok': True}))</textarea>
+    </section>
+
+    <aside class="controls">
+      <div id="buttons">
+        <button id="runBtn" onclick="runCode()" disabled>Run</button>
+        <button onclick="clearOutput()">Clear Terminal</button>
+        <button onclick="clearCode()">Clear Code</button>
+        <button onclick="downloadScript()">Save Script</button>
+        <button onclick="downloadJSONFile('result.json')">Download result.json</button>
+      </div>
+
+      <label class="file-input">
+        <input id="fileInput" type="file" onchange="loadScript(event)" />
+        Load script
+      </label>
+    </aside>
+
+    <section class="output-container">
+      <pre id="output" aria-live="polite">Initializing stateless runtime...</pre>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
