@@ -8,33 +8,59 @@
 </head>
 <body>
   <header class="top">
-    <h1>stateless</h1>
-    <p id="tagline">Python in the browser — stateless, fast, clean, powerful.</p>
-    <div id="status">Loading runtime...</div>
+    <div class="brand">
+      <h1>stateless</h1>
+      <p id="tagline">Python in the browser — stateless, fast, clean, powerful.</p>
+    </div>
+    <div id="status" class="status">Loading runtime...</div>
   </header>
 
   <main class="container">
-    <section class="editor-container">
-      <textarea id="code" placeholder="Write your Python code here..."># Example:\nprint('Hello, stateless!')\n# Write a file and download it: \n# import json\n# open('result.json','w').write(json.dumps({'ok': True}))</textarea>
-    </section>
+    <section class="editor-column">
+      <div class="toolbar">
+        <div class="left-row">
+          <button id="runBtn" onclick="runCode()" disabled title="Run (Ctrl/Cmd+Enter)">Run ▶</button>
+          <button onclick="clearOutput()" title="Clear terminal">Clear Terminal</button>
+          <button onclick="clearCode()" title="Clear editor">Clear Code</button>
+          <button onclick="downloadScript()" title="Save script">Save Script</button>
+        </div>
 
-    <aside class="controls">
-      <div id="buttons">
-        <button id="runBtn" onclick="runCode()" disabled>Run</button>
-        <button onclick="clearOutput()">Clear Terminal</button>
-        <button onclick="clearCode()">Clear Code</button>
-        <button onclick="downloadScript()">Save Script</button>
-        <button onclick="downloadJSONFile('result.json')">Download result.json</button>
+        <div class="right-row">
+          <label class="small">Examples
+            <select id="examples" onchange="loadExample(event)"></select>
+          </label>
+
+          <label class="file-input">
+            <input id="fileInput" type="file" onchange="loadScript(event)" aria-label="Load script file" />
+            Load script
+          </label>
+
+          <label class="small">Theme
+            <button id="themeToggle" onclick="toggleTheme()" class="btn-toggle">•</button>
+          </label>
+        </div>
       </div>
 
-      <label class="file-input">
-        <input id="fileInput" type="file" onchange="loadScript(event)" />
-        Load script
-      </label>
+      <textarea id="code" placeholder="Write your Python code here..."># Example:
+print('Hello, stateless!')
+# Write a file and download it:
+# import json
+# open('result.json','w').write(json.dumps({'ok': True}))</textarea>
+    </section>
+
+    <aside class="sidebar">
+      <div class="controls">
+        <div class="control-row">
+          <button onclick="downloadJSONFile('result.json')" title="Download result.json from Pyodide FS">Download result.json</button>
+          <button onclick="copyOutput()" title="Copy output to clipboard">Copy Output</button>
+        </div>
+
+        <div class="autosave-status" id="autosaveStatus">Autosave: off</div>
+      </div>
     </aside>
 
-    <section class="output-container">
-      <pre id="output" aria-live="polite">Initializing stateless runtime...</pre>
+    <section class="output-column">
+      <pre id="output" aria-live="polite"></pre>
     </section>
   </main>
 
